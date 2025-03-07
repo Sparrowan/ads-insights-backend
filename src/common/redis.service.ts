@@ -1,12 +1,14 @@
 import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { createClient, RedisClientType } from 'redis';
+import { ConfigModule, ConfigService } from "@nestjs/config";
+
 
 @Injectable()
 export class RedisService implements OnModuleInit, OnModuleDestroy {
   private client: RedisClientType;
 
   constructor() {
-    this.client = createClient({ url: 'redis://localhost:6379' });
+    this.client = createClient({ url: 'redis://redis:6379' });
 
     this.client.on('error', (err) => {
       console.error('❌ Redis Client Error:', err);

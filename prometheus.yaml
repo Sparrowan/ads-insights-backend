@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "ads-insights"
+    static_configs:
+      - targets: 
+        - ads-insights:8080

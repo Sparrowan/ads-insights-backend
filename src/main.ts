@@ -4,7 +4,7 @@ import { ValidationPipe, Logger } from '@nestjs/common';
 import * as crypto from 'crypto';
 
 async function bootstrap() {
-  globalThis.crypto = crypto as any;
+  // globalThis.crypto = crypto as any;
 
   const app = await NestFactory.create(AppModule);
   app.enableCors({
