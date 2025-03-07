@@ -6,7 +6,7 @@ import { RedisService } from 'src/common/redis.service';
 @Injectable()
 export class AdsService {
   private readonly CACHE_KEY = 'ads_insights';
-  private readonly CACHE_TTL = 60; // Cache data for 60 seconds
+  private readonly CACHE_TTL = 30; // Cache data for 30 seconds for ease in testing
 
   constructor(
     private readonly websocketGateway: WebsocketGateway,

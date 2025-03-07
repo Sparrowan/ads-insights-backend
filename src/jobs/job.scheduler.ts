@@ -12,7 +12,7 @@ export class JobScheduler {
   ) {}
 
   // Run every 5 minutes
-  @Cron('*/5 * * * * *') // Runs every 5 seconds
+  @Cron('*/5 * * * * *') // Runs every 5 seconds for ease in testing
   async collectMetrics() {
     this.logger.log('Fetching Ads Insights and storing in Prometheus');
 
